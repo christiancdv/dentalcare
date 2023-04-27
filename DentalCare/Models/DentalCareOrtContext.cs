@@ -23,10 +23,14 @@ public partial class DentalCareOrtContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
         modelBuilder.Entity<Reserva>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Reservas__3214EC07A00D7735");
 
+            entity.Property(e => e.EmailPaciente)
+                .HasMaxLength(100)
+                .IsUnicode(false);
             entity.Property(e => e.Especialidad)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -34,6 +38,15 @@ public partial class DentalCareOrtContext : DbContext
                 .HasMaxLength(60)
                 .IsUnicode(false);
             entity.Property(e => e.Fecha).HasColumnType("datetime");
+            entity.Property(e => e.Hora)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.NombrePaciente)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.TelefonoPaciente)
+                .HasMaxLength(100)
+                .IsUnicode(false);
         });
 
         OnModelCreatingPartial(modelBuilder);

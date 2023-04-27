@@ -55,13 +55,17 @@ namespace DentalCare.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Fecha,Especialidad,Especialista")] Reserva reserva)
+        public async Task<IActionResult> Create([Bind("Id,Fecha,Hora,Especialidad,Especialista,NombrePaciente,EmailPaciente,TelefonoPaciente")] Reserva reserva)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(reserva);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                var r = await _context.Reservas.FirstOrDefaultAsync(o => o.Fecha == reserva.Fecha && o.Hora == reserva.Hora && o.Especialista == reserva.Especialista);
+                if (r == null)
+                {
+                    _context.Add(reserva);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
             }
             return View(reserva);
         }
@@ -87,7 +91,7 @@ namespace DentalCare.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Fecha,Especialidad,Especialista")] Reserva reserva)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Fecha,Hora,Especialidad,Especialista,NombrePaciente,EmailPaciente,TelefonoPaciente")] Reserva reserva)
         {
             if (id != reserva.Id)
             {

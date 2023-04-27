@@ -22,9 +22,10 @@
         <thead>
             <tr>
                 <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
-                <th scope="col">@Html.DisplayNameFor(model => model.Fecha)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Fecha) y Hora</th>
                 <th scope="col">@Html.DisplayNameFor(model => model.Especialidad)</th>
                 <th scope="col">@Html.DisplayNameFor(model => model.Especialista)</th>
+                <th scope="col">Paciente</th>
                 <th scope="col">Acciones</th>
             </tr>
         </thead>
@@ -34,7 +35,7 @@
                 <tr>
                     <th scope="row">@Html.DisplayFor(modelItem => item.Id)</th>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Fecha)
+                        @Html.DisplayFor(modelItem => item.Fecha) --- @Html.DisplayFor(modelItem => item.Hora)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Especialidad)
@@ -42,6 +43,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Especialista)
                     </td>
+                    <td><b>Nombre:</b> @Html.DisplayFor(modelItem => item.NombrePaciente) -- <b>Email:</b> @Html.DisplayFor(modelItem => item.EmailPaciente) -- <b>Teléfono:</b> @Html.DisplayFor(modelItem => item.TelefonoPaciente) </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
                         <a asp-action="Details" asp-route-id="@item.Id">Detalle</a> |

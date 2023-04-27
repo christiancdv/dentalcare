@@ -2,38 +2,255 @@
 
 @{
     ViewData["Title"] = "Create";
+
+<script type="text/javascript">
+    function chequearReservas(value) {
+
+        //alert(value);
+
+    }
+</script>
 }
+<form asp-action="Create">
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5" src="~/img/avataaars.svg" alt="..." />
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0">Bienvenido</h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0">Sistema integral de gestión de turnos</p>
+        </div>
+    </header>
 
-<h1>Create</h1>
-
-<h4>Reserva</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Fecha" class="control-label"></label>
-                <input asp-for="Fecha" class="form-control" />
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Reserva de turnos</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!--Implemento el bloque del calendario-->
+            <div class="container-fluid p-5 bg-primary text-white text-center" style="margin-bottom: 20px; border-radius: 20px;">
                 <span asp-validation-for="Fecha" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Especialidad" class="control-label"></label>
-                <input asp-for="Especialidad" class="form-control" />
-                <span asp-validation-for="Especialidad" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Especialista" class="control-label"></label>
-                <input asp-for="Especialista" class="form-control" />
-                <span asp-validation-for="Especialista" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+                <!-- Centro el campo fecha -->
+                <label asp-for="Fecha" class="control-label"></label>
+                <!-- se declarò la variable campoFecha -->
+                <h4>Seleccione una Fecha</h4>
+                <p></p>
+                <input asp-for="Fecha" class="form-control" type="date" style="display: inline-grid; width: 40%; text-align: center;" onchange="chequearReservas(this.value)"/>
+                <!-- se centrò el obejto date -->
+            </div>
+            <div class="row justify-content-center">
+                <div class="col">
+                    <div class="turno1">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">09:00 A 10:00 HS</h5>
+                                <p class="card-text">DISPONIBLE</p>
+                                <input asp-for="Hora" type="radio" value="09:00 A 10:00 HS" />
+                            </div>
+                        </div>
+                    </div>
+                    <p></p>
+                    <p></p>
+                    <div class="turno2">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">11:00 A 12:00 HS</h5>
+                                <p class="card-text">DISPONIBLE</p>
+                                <input asp-for="Hora" type="radio" value="11:00 A 12:00 HS" />
+                            </div>
+                        </div>
+                    </div>
+                    <p></p>
+                    <p></p>
+                    <div class="turno3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">13:00 A 14:00 HS</h5>
+                                <p class="card-text">DISPONIBLE</p>
+                                <input asp-for="Hora" type="radio" value="13:00 A 14:00 HS" />
+                            </div>
+                        </div>
+                    </div>
+                    <p></p>
+                    <p></p>
+                    <div class="turno4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">15:00 A 16:00 HS</h5>
+                                <p class="card-text">DISPONIBLE</p>
+                                <input asp-for="Hora" type="radio" value="15:00 A 16:00 HS" />
+                            </div>
+                        </div>
+                    </div>
+                    <p></p>
+                    <p></p>
+                </div>
+                <!-- FIN Primera columna -->
+                <div class="col">
+                    <div class="turno5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">10:00 A 11:00 HS</h5>
+                                <p class="card-text">DISPONIBLE</p>
+                                <input asp-for="Hora" type="radio" value="10:00 A 11:00 HS" />
+                            </div>
+                        </div>
+                    </div>
+                    <p></p>
+                    <p></p>
+                    <div class="turno6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">12:00 A 13:00 HS</h5>
+                                <p class="card-text">DISPONIBLE</p>
+                                <input asp-for="Hora" type="radio" value="12:00 A 13:00 HS" />
+                            </div>
+                        </div>
+                    </div>
+                    <p></p>
+                    <p></p>
+                    <div class="turno7">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">14:00 A 15:00 HS</h5>
+                                <p class="card-text">DISPONIBLE</p>
+                                <input asp-for="Hora" type="radio" value="14:00 A 15:00 HS" />
+                            </div>
+                        </div>
+                    </div>
+                    <p></p>
+                    <p></p>
+                    <div class="turno8">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">16:00 A 17:00 HS</h5>
+                                <p class="card-text">DISPONIBLE</p>
+                                <input asp-for="Hora" type="radio" value="16:00 A 17:00 HS" />
+                            </div>
+                        </div>
+                    </div>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+            <!-- FIN Segunda columna -->
+            <div class="row align-items-end">
+                <div class="col">
+                    <div class="turno9">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">17:00 A 18:00 HS</h5>
+                                <p class="card-text">DISPONIBLE</p>
+                                <input asp-for="Hora" type="radio" value="17:00 A 18:00 HS">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page-section bg-primary text-white mb-0" id="about">
+        <div class="container">
+            <!-- About Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase bg-primary">Seleccione una especialidad</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <c1-3 class="text-center">
+
+                <!-- Especialidades-->
+                <h5>Especialidades</h5>
+                <p></p>
+                <select asp-for="Especialidad" class="form-select" style="text-align: center; display: inline; width: 20%;">
+                    <option value="" disabled selected>Selecciona una especialidad</option>
+                    <option value="General">General</option>
+                    <option value="Endodoncia">Endodoncia</option>
+                    <option value="Ortodoncia">Ortodoncia</option>
+                    <option value="Cirugia/Implante">Cirugia/Implante</option>
+                </select>               
+                <p></p>
+                <p></p>
+                <h5>Profesional</h5>
+                <p></p>
+                <select asp-for="Especialista" class="form-select" style="text-align: center; display: inline; width: 20%;">
+                    <option value="" disabled selected>Selecciona un profesional</option>
+                    <option value="Christian">Christian</option>
+                    <option value="Pedro">Pedro</option>
+                    <option value="Juan">Juan</option>
+                    <option value="Lucia">Lucia</option>
+                </select>
+            </c1-3>
+        </div>
+
+
+    </section>
+
+    <!-- contact section-->
+    <section class="page-section" id="contact">
+        <div class="container">
+            <!-- contact section heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">datos del paciente</h2>
+            <!-- icon divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- contact section form-->
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7">
+                        <!-- name input-->
+                        <div class="form-floating mb-3">
+                        <input asp-for="NombrePaciente" class="form-control" id="name" type="text" placeholder="Nombre Completo" data-sb-validations="required" />
+                            <label for="name">nombre completo</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">es necesario ingresar su nombre.</div>
+                        </div>
+                        <!-- email address input-->
+                        <div class="form-floating mb-3">
+                            <input asp-for="EmailPaciente" class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required" />
+                            <label for="email">email</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">un email es necesario.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">el email no es valido.</div>
+                        </div>
+                        <!-- phone number input-->
+                        <div class="form-floating mb-3">
+                            <input asp-for="TelefonoPaciente" class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                            <label for="phone">telefono</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">un telefono es necesario.</div>
+                        </div>
+                        <div style="text-align: center; margin-top: 40px;">
+                        <!-- submit button-->
+                            <input type="submit" value="Crear Reserva" class="btn btn-primary btn-xl m-10" />
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>

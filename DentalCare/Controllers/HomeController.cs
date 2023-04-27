@@ -15,7 +15,7 @@ namespace DentalCare.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Create", "Reservas");
         }
 
         public IActionResult Privacy()
