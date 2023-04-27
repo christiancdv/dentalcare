@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "_LayoutLogin";
+    ViewData["Title"] = "Inicia Sesion";
+}
+
+<header class="masthead bg-primary text-white text-center" style="margin-bottom: 50px; margin-top: 20px; border-radius: 50px; border: 2px solid;">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image-->
+        <h1 class="masthead-heading text-uppercase mb-0">DentalCare</h1>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0" style="margin: 20px;">Bienvenido</p>
+    </div>
+</header>
+
+<form style="background-color:#00bc9d; height: fit-content; margin: auto; border-radius: 15px; border: 2px solid white; text-align: -webkit-center;">
+    <label for="exampleInputEmail1" style="margin-top: 50px;">Correo Electrónico</label>
+    <div class="form-group w-50" style="max-width: 500px; margin-bottom: 50px;">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@correo.com" required>
+        <small id="emailHelp" class="form-text text-muted">No compartiremos tu email con nadie.</small>
+    </div>
+    <label for="exampleInputPassword1">Contraseña</label>
+    <div class="form-group w-50" style="max-width: 500px; margin-bottom: 50px;">
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" required>
+    </div>
+    <a href="/Reservas/Create" class="btn btn-outline-light" style="margin-bottom: 50px; height: 50px; width: 200px;">INGRESAR</a>
+</form>
